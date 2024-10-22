@@ -1,9 +1,3 @@
-# Stellar_Classification
-
-Certainly! Here's a sample README file for your **Stellar Classification** project:
-
----
-
 # Stellar Classification System
 
 This project develops a machine learning model to classify stars based on photometric data from the **Sloan Digital Sky Survey (SDSS)**. Using the `u`, `g`, `r`, `i`, and `z` photometric filter bands, the model predicts the class of astronomical objects.
