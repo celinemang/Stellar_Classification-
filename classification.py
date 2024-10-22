@@ -1,7 +1,9 @@
 from sklearn.preprocessing import StandardScaler
 import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import accuracy_score
 
-# 데이터 불러오기
 data = pd.read_csv('Skyserver_data.csv')
 
 # 존재하는 열을 바탕으로 features와 labels를 정의합니다.
@@ -9,16 +11,9 @@ features = data[['u', 'g', 'r', 'i', 'z']]  # 실제로 사용 가능한 열
 labels = data['class']  # 'class' 열은 천체의 분류에 해당하는 듯함
 
 # 데이터 스케일링
-from sklearn.preprocessing import StandardScaler
 scaler = StandardScaler()
 features_scaled = scaler.fit_transform(features)
 
-# 모델을 훈련하는 과정은 그대로 진행
-
-
-from sklearn.model_selection import train_test_split
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.metrics import accuracy_score
 
 # 데이터셋을 훈련셋과 테스트셋으로 나누기
 X_train, X_test, y_train, y_test = train_test_split(features_scaled, labels, test_size=0.2, random_state=42)
